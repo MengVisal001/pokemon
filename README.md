@@ -18,3 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 ### created at 12 Sat Nov 2022 9:07 PM
 
 - BLoc A predictable state management library that helps implement the BLoC   (Business Logic Component) design pattern.
+- Work with Flutter SDK 3.0.5, dart 2.17.6
