@@ -1,3 +1,8 @@
 {
-    "description" : "ការពិពណ៌នា"
+    "pokemon": "Pokemon",
+    "settings": "Settings",
+    "language": "Language",
+    "khmer": "Khmer",
+    "english": "English",
+    "description" : "Description"
 }

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokemon/localization/pokemon_localization.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pokemon/resources/colors.dart';
 
 import 'feature/pokemon/bloc/pokemon_bloc.dart';
-import 'screen/pokemon_screen.dart';
+import 'feature/pokemon/screen/pokemon_screen.dart';
+import 'feature/search_pokemon/bloc/search_pokemon_bloc.dart';
+import 'localization/cubit/localization_cubit.dart';
+import 'localization/localization.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -32,6 +36,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => PokemonBloc()..add(PokemonLoading()),
         ),
+        BlocProvider(create: (context) => LocalizationCubit()),
+        BlocProvider(create: (_) => SearchPokemonBloc())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -43,7 +49,10 @@ class MyApp extends StatelessWidget {
           Locale('kh', ''), // Khmer
         ],
         localizationsDelegates: const [
-          PokemonLocalization.delegate,
+          AppLocalization.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
         ],
         localeResolutionCallback: (locale, supportedLocales) {
           for (var supportedLocale in supportedLocales) {
@@ -55,15 +64,26 @@ class MyApp extends StatelessWidget {
           return supportedLocales.first;
         },
         theme: ThemeData(
+          iconTheme: const IconThemeData(color: AppColors.primary),
+          drawerTheme: DrawerThemeData(
+            backgroundColor: AppColors.white,
+            scrimColor: Colors.black87.withOpacity(.25),
+          ),
           appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.white,
             elevation: .0,
+            iconTheme: IconThemeData(
+              color: AppColors.primary, //change color on your need
+            ),
             titleTextStyle: TextStyle(
-              color: Colors.black54,
+              color: AppColors.primary,
               fontSize: 24,
             ),
           ),
-          scaffoldBackgroundColor: Colors.white,
+          textTheme: const TextTheme(
+            subtitle1: TextStyle(color: AppColors.primary),
+          ),
+          scaffoldBackgroundColor: AppColors.white,
         ),
       ),
     );

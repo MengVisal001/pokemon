@@ -1,7 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:meta/meta.dart';
 import 'package:pokemon/model/pokemon_model.dart';
 import 'package:http/http.dart' as http;
 

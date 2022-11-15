@@ -3,15 +3,16 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class PokemonLocalization {
-  PokemonLocalization._internal();
-  static final PokemonLocalization _singleton = PokemonLocalization._internal();
+class AppLocalization {
+  static final AppLocalization _singleton = AppLocalization._internal();
 
-  static PokemonLocalization get instance => _singleton;
+  AppLocalization._internal();
+
+  static AppLocalization get instance => _singleton;
 
   Map<String, String>? _localizedValues;
 
-  Future<PokemonLocalization> load(Locale locale) async {
+  Future<AppLocalization> load(Locale locale) async {
     String jsonStringValues = await rootBundle
         .loadString('assets/locale/localization_${locale.languageCode}.json');
     Map<String, dynamic> mappedJson = json.decode(jsonStringValues);
@@ -22,16 +23,16 @@ class PokemonLocalization {
   }
 
   // static member to have simple access to the delegate from Material App
-  static const LocalizationsDelegate<PokemonLocalization> delegate =
-      _PokemonLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalization> delegate =
+      _AppLocalizationsDelegate();
 
-  String text(String key) {
+  String translate(String key) {
     return _localizedValues![key] ?? "$key not found";
   }
 }
 
-class _PokemonLocalizationsDelegate extends LocalizationsDelegate<PokemonLocalization> {
-  const _PokemonLocalizationsDelegate();
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalization> {
+  const _AppLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) {
@@ -39,10 +40,10 @@ class _PokemonLocalizationsDelegate extends LocalizationsDelegate<PokemonLocaliz
   }
 
   @override
-  Future<PokemonLocalization> load(Locale locale) async {
-    return PokemonLocalization.instance.load(locale);
+  Future<AppLocalization> load(Locale locale) async {
+    return AppLocalization.instance.load(locale);
   }
 
   @override
-  bool shouldReload(LocalizationsDelegate<PokemonLocalization> old) => true;
+  bool shouldReload(LocalizationsDelegate<AppLocalization> old) => true;
 }

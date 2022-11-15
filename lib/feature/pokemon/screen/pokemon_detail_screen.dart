@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon/model/pokemon_model.dart';
+import 'package:pokemon/resources/strings.dart';
 
 class PokemonDetailScreen extends StatelessWidget {
   const PokemonDetailScreen({
@@ -49,9 +50,10 @@ class PokemonDetailScreen extends StatelessWidget {
                 direction: Axis.vertical,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Description',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                  Text(
+                    Strings().description,
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.w700),
                   ),
                   Text(pokemonModel.xdescription!),
                   const SizedBox(height: 10),

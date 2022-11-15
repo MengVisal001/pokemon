@@ -1,3 +1,7 @@
 {
-    "pokemon" : "Pokemon"
+    "settings": "ការកំណត់",
+    "language": "ភាសា",
+    "khmer": "ខ្មែរ",
+    "english": "English",
+    "description": "ការពិពណ៌នា"
 }

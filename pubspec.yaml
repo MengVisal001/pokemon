@@ -10,11 +10,15 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   cupertino_icons: ^1.0.2
   flutter_bloc: ^8.1.1
   equatable: ^2.0.5
   http: ^0.13.5
   flutter_native_splash: ^2.0.1+1
+  stream_transform: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -42,7 +46,7 @@ flutter:
 
   assets:
     - assets/pikachu.png
-    - assets/locale
+    - assets/locale/
 
   # example:
   # fonts:

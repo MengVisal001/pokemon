@@ -1,6 +1,5 @@
 part of 'pokemon_bloc.dart';
 
-@immutable
 abstract class PokemonState extends Equatable {
   const PokemonState();
 
