@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokemon/feature/favorite_pokemon/cubit/favorite_pokemon_cubit.dart';
+import 'package:pokemon/feature/favorite_pokemon/screen/favorite_list.dart';
 import 'package:pokemon/model/pokemon_model.dart';
 import 'package:pokemon/resources/strings.dart';
 
@@ -39,6 +42,29 @@ class PokemonDetailScreen extends StatelessWidget {
         automaticallyImplyLeading: true,
         title: Text(pokemonModel.name!),
         foregroundColor: Colors.black54,
+        actions: [
+          BlocBuilder<FavoritePokemonCubit, AddFavoritePokemon>(
+            builder: (context, state) {
+              return IconButton(
+                onPressed: () {
+                  BlocProvider.of<FavoritePokemonCubit>(context)
+                      .addToFavorite(pokemonModel);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const ListFavoritePokemon(),
+                      ));
+                },
+                icon: state.isFavorite == true
+                    ? const Icon(
+                        Icons.favorite_outline,
+                        color: Colors.red,
+                      )
+                    : const Icon(Icons.favorite_outline),
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(8.0),

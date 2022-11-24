@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pokemon/feature/favorite_pokemon/cubit/favorite_pokemon_cubit.dart';
 import 'package:pokemon/resources/colors.dart';
 
 import 'feature/pokemon/bloc/pokemon_bloc.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
           create: (context) => PokemonBloc()..add(PokemonLoading()),
         ),
         BlocProvider(create: (context) => LocalizationCubit()),
-        BlocProvider(create: (_) => SearchPokemonBloc())
+        BlocProvider(create: (_) => SearchPokemonBloc()),
+        BlocProvider(create: (_) => FavoritePokemonCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
