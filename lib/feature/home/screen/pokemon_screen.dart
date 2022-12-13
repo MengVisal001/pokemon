@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokemon/feature/pokemon/bloc/pokemon_bloc.dart';
+import 'package:pokemon/feature/home/bloc/pokemon_bloc.dart';
+import 'package:pokemon/resources/strings.dart';
 
 import '../../../widget/pokemon_widget.dart';
 import '../../search_pokemon/screen/search_pokemon_screen.dart';
@@ -14,7 +15,7 @@ class PokemonScreen extends StatelessWidget {
     return Scaffold(
       drawer: PokemonWidget().homeDrawer(),
       appBar: AppBar(
-        title: const Text('Pokemon'),
+        title: Text(Strings().pokemon),
         actions: [
           IconButton(
             onPressed: () => Navigator.of(context).push(

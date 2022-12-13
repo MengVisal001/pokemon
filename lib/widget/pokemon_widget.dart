@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/localization/cubit/localization_cubit.dart';
 import 'package:pokemon/model/pokemon_model.dart';
 
-import '../feature/pokemon/screen/pokemon_detail_screen.dart';
+import '../feature/home/screen/pokemon_detail_screen.dart';
 import '../resources/colors.dart';
 import '../resources/strings.dart';
 

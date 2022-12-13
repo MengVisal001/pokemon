@@ -1,6 +1,7 @@
 import 'package:pokemon/localization/localization.dart';
 
 class Strings {
+  String pokemon = AppLocalization.instance.translate('pokemon');
   String settings = AppLocalization.instance.translate('settings');
   String language = AppLocalization.instance.translate('language');
   String khmer = AppLocalization.instance.translate('khmer');

@@ -5,8 +5,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pokemon/feature/favorite_pokemon/cubit/favorite_pokemon_cubit.dart';
 import 'package:pokemon/resources/colors.dart';
 
-import 'feature/pokemon/bloc/pokemon_bloc.dart';
-import 'feature/pokemon/screen/pokemon_screen.dart';
+import 'feature/home/bloc/pokemon_bloc.dart';
+import 'feature/home/screen/pokemon_screen.dart';
 import 'feature/search_pokemon/bloc/search_pokemon_bloc.dart';
 import 'localization/cubit/localization_cubit.dart';
 import 'localization/localization.dart';
