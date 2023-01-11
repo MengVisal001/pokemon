@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/feature/home/bloc/pokemon_bloc.dart';
+import 'package:pokemon/feature/search/screen/search_pokemon_screen.dart';
 import 'package:pokemon/resources/strings.dart';
 
-import '../../../widget/pokemon_widget.dart';
-import '../../search_pokemon/screen/search_pokemon_screen.dart';
+import 'widget/pokemon_widget.dart';
 
 class PokemonScreen extends StatelessWidget {
   const PokemonScreen({Key? key}) : super(key: key);

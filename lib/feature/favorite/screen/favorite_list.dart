@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokemon/feature/favorite_pokemon/cubit/favorite_pokemon_cubit.dart';
-import 'package:pokemon/widget/pokemon_widget.dart';
+import 'package:pokemon/feature/home/screen/widget/pokemon_widget.dart';
+
+import '../cubit/favorite_pokemon_cubit.dart';
 
 class ListFavoritePokemon extends StatelessWidget {
   const ListFavoritePokemon({Key? key}) : super(key: key);

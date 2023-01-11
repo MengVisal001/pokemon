@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokemon/feature/favorite_pokemon/cubit/favorite_pokemon_cubit.dart';
-import 'package:pokemon/feature/favorite_pokemon/screen/favorite_list.dart';
+import 'package:pokemon/feature/favorite/cubit/favorite_pokemon_cubit.dart';
 import 'package:pokemon/model/pokemon_model.dart';
 import 'package:pokemon/resources/strings.dart';
+
+import '../../favorite/screen/favorite_list.dart';
 
 class PokemonDetailScreen extends StatelessWidget {
   const PokemonDetailScreen({
